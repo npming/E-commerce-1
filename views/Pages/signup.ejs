@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/CSS/styles.css" />
+</head>
+<body>
+    <%- include('../customElements/navigation') %>
+    <div class="loginPage-wrapper">
+        <h2>Signup Page</h2>
+        <form action="/signup" method="POST">
+            <div class="input-wrapper">
+                <label>Email:</label>
+                <input type="text" name="email" />
+            </div>
+            <div class="input-wrapper">
+                <label>Password:</label>
+                <input type="password" name="password" />
+            </div>
+            <div class="checkBox-wrapper">
+                <input type="checkbox" name="admin" value="admin"> check if you are a seller
+            </div>
+            <button class="button" type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>

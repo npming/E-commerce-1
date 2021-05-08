@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.navigationWrapper {
+  background: #e5e5e5;
+  padding: 2px;
+}
+.navigationWrapper ul {
+  padding-left: 10px;
+}
+.navigationWrapper ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.navigationWrapper ul li a {
+  font: 400 20px Arial;
+  text-decoration: none;
+  color: #285f5d;
+  cursor: pointer;
+}
+.navigationWrapper .right {
+  float: right;
+}
+.loginPage-wrapper,
+.addProduct-page {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.addProduct-page form,
+.loginPage-wrapper form {
+  background: #e5e5e5;
+  padding: 30px 20px;
+  text-align: center;
+}
+.input-wrapper input {
+  height: 28px;
+  border-radius: 10px;
+  border: 1px #ccc solid;
+  width: 200px;
+}
+.input-wrapper {
+  margin-bottom: 15px;
+}
+.input-wrapper label {
+  width: 120px;
+  display: inline-block;
+  text-align: left;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+button {
+  background: #3e7674;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border: 0;
+  width: 140px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button a {
+  text-decoration: none;
+  color: #fff;
+}
+.card-wrapper {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  margin-bottom: 14px;
+  position: relative;
+  width: 300px;
+}
+.cardBody img {
+  max-height: 140px;
+}
+.cardBody .title {
+  margin: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.cardBody .description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.categoryPage ul,
+.cartPage ul {
+  padding: 0;
+}
+.cartPage {
+  padding: 0px 30px;
+}
+.categoryPage ul li {
+  display: inline-block;
+  margin: 10px;
+}
+.categoryPage {
+  text-align: center;
+}
+.cardFooter {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+.cardHeader .deleteProduct {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: red;
+  font-size: 20px;
+  font-weight: 400;
+  background: none;
+  cursor: pointer;
+  width: auto;
+  padding: 0;
+}
+.homepage {
+  position: relative;
+}
+.homepage h1 {
+  letter-spacing: 2px;
+}
+.bannerText {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.homepage img {
+  width: 100%;
+}
+.cardFooter button,
+.cardFooter form {
+  display: inline-block;
+}
+.checkBox-wrapper {
+  margin-bottom: 15px;
+}
+.Btn-link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #285f5d;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  width: auto;
+}
+.coloured-btn {
+  background: #3e7674;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border: 0;
+  width: 120px;
+  height: 15px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  font: 400 13.3px Arial;
+  display: inline-block;
+}
+.cartItem-wrapper * {
+  display: inline-block;
+  margin-right: 20px;
+}
+.cartItem-wrapper .deleteProduct {
+  width: auto;
+  background: #d32f2f;
+}
+.cartItem-Body p {
+  width: 180px;
+  margin-left: 10px;
+}

@@ -1,0 +1,41 @@
+<div class="card-wrapper">
+    <div class="cardHeader">
+        <form action="/category" method="POST">
+            <input type="hidden" name="id" value="<%= id %>"/>
+            <% if(!detailsPage) { %>
+                <button class="deleteProduct" type="submit">X</button>
+            <% } %>
+        </form>
+    <div class="cardBody">
+        <p class="title"><%= title %></p>
+        <% if(image) { %>
+            <img src='<%= image %>' />
+        <% } else { %>
+            <img src="https://icon-library.com/images/no-image-available-icon/no-image-available-icon-11.jpg" />
+        <% } %>
+        <p class="price">$<%= price %></p>
+        <% if(!detailsPage) { %>
+            <p class="description"><%= desc %></p>
+        <% } else { %>
+            <p class="desc"><%= desc %></p>
+        <% } %>
+    </div>
+    <div class="cardFooter">
+        <% if(!detailsPage) { %>
+            <a class="coloured-btn" href="/category/<%= id %>">Details</a>
+        <% } %>
+        <% if(Authenticated) { %>
+            <form action="/cart" method="POST">
+                <input type="hidden" name="id" value="<%= id %>"/>
+                    <button type="submit">Add to cart</button>
+            </form>
+        <% } %>
+    </div>
+
+</div>
+<script>
+    function clickHandler(val) {
+        console.log("i am clicked", val);
+        window.location.href('/category/')
+    }
+</script>

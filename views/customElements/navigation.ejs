@@ -1,0 +1,20 @@
+<header class="navigationWrapper">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/category">Products</a></li>
+        
+        <% if(Authenticated) { %>
+            <li><a href="/addProduct">Add Products</a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li class="right">
+                <form action="/logout" method="POST">
+                    <button class="Btn-link" type="submit">Logout</button>
+                </form>
+            </li>
+        <% } %>
+        <% if(!Authenticated) { %>
+            <li class="right"><a href="/login">Login</a></li>
+            <li class="right"><a href="/signup">Register</a></li>
+        <% } %>
+    </ul>
+</header>
