@@ -3,8 +3,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDbStore = require('connect-mongodb-session')(session)
-const MONGO_URI = 'yourdb'
- 
+const { MONGO_URI } = require('./db/database');
+
 const app = express();
 //creating a session storage in database
 const store = new MongoDbStore({
