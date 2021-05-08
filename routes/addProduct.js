@@ -10,7 +10,6 @@ router.get('/addProduct', (req, res) => {
 })
 
 router.post('/addProduct', async (req, res) => {
-    //console.log(req);
     const response = await ProductModel.create({
         title: req.body.title,
         price: req.body.price,

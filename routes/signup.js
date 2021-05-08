@@ -19,7 +19,6 @@ router.post('/signup', async (req, res) => {
     //check if user already exist
     if(data && data.length){
         res.redirect('/login')
-        console.log(data);
     }
     else {  // register new user
         bcrypt.hash(req.body.password, 6).then(hashedPw => {
@@ -30,7 +29,6 @@ router.post('/signup', async (req, res) => {
                 cart: { items: [] }
             })
         }).catch(err => console.log(err))
-        console.log("registered new user");
         res.redirect('/')
     }
 })

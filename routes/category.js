@@ -4,7 +4,6 @@ const ProductModel = require('../models/product');
 
 router.get('/category', async (req, res)=>{
     const data = await ProductModel.find();
-    //console.log(data);
     res.render('Pages/category', {
         pageTitle: 'Products',
         products: data,
@@ -15,7 +14,6 @@ router.get('/category', async (req, res)=>{
 
 router.post('/category', async (req, res)=>{
     const data = await ProductModel.deleteOne({_id: req.body.id});
-    console.log(req.body.id);
     res.redirect('/category')
 });
 

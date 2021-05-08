@@ -20,8 +20,6 @@ router.post('/login', async (req, res) => {
     if(data && data.email == email){
         bcrypt.compare(password, data.password).then(doMatch => {
             if(doMatch) {
-                console.log("matching");
-                console.log(req.session);
                 req.session.isLoggedin = true;
                 req.session.user = data;
                 req.session.save(err =>{
@@ -30,7 +28,6 @@ router.post('/login', async (req, res) => {
                 })
                 
             } else {
-                console.log("did not matching");
                 res.redirect('/login')
                 //res.json({message: "invalid email or password"})
             }

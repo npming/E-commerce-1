@@ -30,7 +30,6 @@ router.get('/cart/:title', async (req, res)=>{
     const user = await UserModel.findOne({email: userEmail})
     user.cart.items.pop(req.params);
     user.save();
-    console.log(req.params);
     res.redirect('/cart')
 });
 
