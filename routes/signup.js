@@ -29,7 +29,7 @@ router.post('/signup', async (req, res) => {
                 cart: { items: [] }
             })
         }).catch(err => console.log(err))
-        res.redirect('/')
+        res.redirect('/login')
     }
 })
 

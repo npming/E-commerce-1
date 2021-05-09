@@ -47,7 +47,7 @@ app.use(categoryPage);
 //logout on session expire
 app.use((req, res, next)=> {
     if(!req.session.isLoggedin){
-            res.redirect('/login')
+        return res.redirect('/login')
     }
     next();
 });
