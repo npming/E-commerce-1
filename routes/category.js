@@ -23,7 +23,6 @@ router.get('/category/:id', async (req, res)=>{
         pageTitle: 'Products',
         products: [data],
         detailsPage: true,
-        Authenticated: req.session.isLoggedin
     })
 });
 

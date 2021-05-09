@@ -2,6 +2,7 @@
     <div class="cardHeader">
         <form action="/category" method="POST">
             <input type="hidden" name="id" value="<%= id %>"/>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
             <% if(!detailsPage) { %>
                 <button class="deleteProduct" type="submit">X</button>
             <% } %>
@@ -27,6 +28,7 @@
         <% if(Authenticated) { %>
             <form action="/cart" method="POST">
                 <input type="hidden" name="id" value="<%= id %>"/>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                     <button type="submit">Add to cart</button>
             </form>
         <% } %>

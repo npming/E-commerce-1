@@ -4,23 +4,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDbStore = require('connect-mongodb-session')(session)
 const { MONGO_URI } = require('./db/database');
-
-const app = express();
-//creating a session storage in database
-const store = new MongoDbStore({
-    uri: MONGO_URI,
-    collection: 'sessions'
-})
-// session middleware
-app.use(session({ 
-    secret: 'mysecret', 
-    resave: false,
-    saveUninitialized: false,
-    store: store,
-    cookie: {
-        maxAge: 3600000
-    }
-}))
+const csrf = require('csurf');
 
 // importing routes
 const home = require('./routes/landing');
@@ -31,14 +15,37 @@ const login = require('./routes/login');
 const signup = require('./routes/signup');
 const logout = require('./routes/logout');
 
-//middlewares start
-app.use(express.urlencoded({extended: false}))
-//serving static files like css
-app.use(express.static(path.join(__dirname, 'public')))
-//middlewares end
+const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', 'views')
+//creating a session storage in database
+const store = new MongoDbStore({
+    uri: MONGO_URI,
+    collection: 'sessions'
+})
+
+app.use(express.urlencoded({extended: false}))
+//serving static files like css
+app.use(express.static(path.join(__dirname, 'public')))
+// session middleware
+app.use(session({ 
+    secret: 'mysecret', 
+    resave: false,
+    saveUninitialized: false,
+    store: store,
+    cookie: {
+        httpOnly: true,
+        maxAge: 3600000
+    }
+}))
+// csrf middleware
+app.use(csrf());
+app.use((req, res, next) => {
+    res.locals.Authenticated = req.session.isLoggedin;
+    res.locals.csrfToken = req.csrfToken();
+    next();
+})
 
 app.use(home);
 app.use(login);

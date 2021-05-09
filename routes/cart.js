@@ -10,7 +10,6 @@ router.get('/cart', async (req, res)=>{
     res.render('Pages/cart', {
         pageTitle: 'cart',
         products: user.cart.items,
-        Authenticated: req.session.isLoggedin
     })
 })
 

@@ -5,7 +5,6 @@ const ProductModel = require('../models/product');
 router.get('/addProduct', (req, res) => {
     res.render('Pages/addProduct', {
         pageTitle: 'admin',
-        Authenticated: req.session.isLoggedin
     })
 })
 

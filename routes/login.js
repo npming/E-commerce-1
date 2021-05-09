@@ -6,8 +6,7 @@ const bcrypt = require('bcryptjs');
 
 router.get('/login', (req, res) => {
     res.render('Pages/login', {
-        pageTitle: 'Login',
-        Authenticated: false
+        pageTitle: 'Login'
     })
 })
 

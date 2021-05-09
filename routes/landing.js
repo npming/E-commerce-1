@@ -5,7 +5,6 @@ router.get('/', (req, res) => {
         res.render('landing', {
             products: 'abc',
             pageTitle: 'Bought',
-            Authenticated: req.session.isLoggedin
         })
     }
 )

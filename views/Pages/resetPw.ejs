@@ -10,20 +10,19 @@
 <body>
     <%- include('../customElements/navigation') %>
     <div class="loginPage-wrapper">
-        <h2>Login Page</h2>
-        <form action="/login" method="POST">
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <h2>Reset Password</h2>
+        <form action="/reset" method="POST">
             <div class="input-wrapper">
                 <label>Email:</label>
                 <input type="text" name="email" />
             </div>
             <div class="input-wrapper">
-                <label>Password:</label>
+                <label>New password:</label>
                 <input type="password" name="password" />
             </div>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
             <button class="button" type="submit">submit</button>
         </form>
-        <p><a href="/reset">Forgot Password ?</a></p>
     </div>
 </body>
 </html>
