@@ -36,7 +36,7 @@ router.post('/signup', async (req, res) => {
         // sending email on successful signup
         // sgMail.send({
         //     to: email, 
-        //     from: 'npming.dev@gmail.com',
+        //     from: '',
         //     subject: 'sign up successful',
         //     text: 'and easy to do anywhere, even with Node.js',
         //     html: `<h1>You have successfully signed up with</h1>`
